@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+a{
+ text-decoration: none;
+ color:black;
+ font-size:2rem;
+}
+li{
+  list-style:none; 
+}
+body{
+  background-color:rgb(32 35 39);
+} 
+.navbar{
+  min-height: 70px;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  padding:0 24px;
+  /*background-color: rgb(0, 156, 65);*/
+}
+.nav-menu{
+   display:flex;
+   justify-content:space-between;
+   align-items:center;
+   gap:50px;
+
+}
+.navbar-logo{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.notes-icon{
+  margin-right:20px ;
+  height: 3rem;
+}
+.navbar-title{
+  color:white;
+  font-family: 'Ephesis', cursive;
+}
+.nav-link{
+  background-color: #018786;
+  border-radius: 5px;
+  padding:.9rem 2rem;
+  box-shadow: 5px 10px 18px black ;
+  border-style:none;
+  font-size:1rem;
+}
+.nav-link:hover{
+    color:white;
+    transform: scale(1.2);
+}
+.googlelogin{
+  border-radius: 5px;
+  padding:.9rem 2rem;
+  box-shadow: 5px 10px 18px black ;
+}
+.googlelogin:hover{
+    transform: scale(1.15)
+}
+
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
