@@ -43,28 +43,8 @@ body{
 .navbar-title{
   color:white;
   font-family: 'Ephesis', cursive;
+  font-size: 52px;
 }
-.nav-link{
-  background-color: #018786;
-  border-radius: 5px;
-  padding:.9rem 2rem;
-  box-shadow: 5px 10px 18px black ;
-  border-style:none;
-  font-size:1rem;
-}
-.nav-link:hover{
-    color:white;
-    transform: scale(1.2);
-}
-.googlelogin{
-  border-radius: 5px;
-  padding:.9rem 2rem;
-  box-shadow: 5px 10px 18px black ;
-}
-.googlelogin:hover{
-    transform: scale(1.15)
-}
-
 .hamburger{
   display: none;
   cursor: pointer;

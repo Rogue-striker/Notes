@@ -1,4 +1,7 @@
 import  notes from './notes.svg'
+import Button from '@material-ui/core/Button';
+import { Home, Notes, } from '@material-ui/icons';
+import {GoogleLogin} from 'react-google-login'
 const Nav = () => {
   return (
     <nav className="navbar">
@@ -10,13 +13,13 @@ const Nav = () => {
       </div>
       <ul className="nav-menu">
         <li className="nav-item">
-          <button className="nav-link">Home</button>
+          <Button variant = "contained" startIcon={<Home/>}>Home</Button>
         </li>
         <li className="nav-item">
-          <button className="nav-link">Notes</button>
+          <Button variant ="contained" startIcon={<Notes/>}>Notes</Button>
         </li>
         <li className="nav-item">
-          <button className="googlelogin">Login</button>
+          <GoogleLogin buttonText="Login"/>
         </li>
       </ul>
       <div className="hamburger">

@@ -1,6 +1,8 @@
-.Editor{
+
+.editorwrap{
     padding-top: 60px;
     height: 90vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,7 +16,7 @@
     align-items: center;
 }
 .flexer{
-    width: 25%;
+    width: 30%;
     display: flex;
     align-items: center;
     justify-content: space-between;
