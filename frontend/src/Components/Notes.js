@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from './Card'
-import './Styles/Notes.css'
+import '../Styles/Notes.css'
 const Note = [
     {
       title: "Notes title",
