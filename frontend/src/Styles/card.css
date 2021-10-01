@@ -1,0 +1,15 @@
+.card{
+    border-radius: 4px;
+    background-color: beige;
+    width: 100%;
+    border-style: solid;
+    border-color: red;
+    padding: 15px;
+}
+.card-title{
+    text-align: left;
+}
+.card-content{
+    text-align: center;
+}
+

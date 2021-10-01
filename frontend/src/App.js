@@ -1,6 +1,6 @@
-import Nav from './Nav'
+import Nav from './Components/Nav'
 import React from 'react'
-import Editor from './Editor'
+import Editor from './Components/Editor'
 function App() {
   return(
     <React.Fragment>

@@ -1,7 +1,9 @@
-
-.editorwrap{
-    padding-top: 60px;
-    height: 90vh;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.editorWrap{
+    padding-top: 50px;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -9,7 +11,7 @@
     align-items: center;
 }
 .btnbar{
-    padding-top:15px;
+    padding-top:20px;
     width: 80vw;
     display: flex;
     justify-content: flex-end;
@@ -42,4 +44,3 @@
 #notewrite::placeholder{
     color:rgb(5, 2, 26)
 }
-
