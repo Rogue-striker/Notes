@@ -8,15 +8,30 @@ const url = `mongodb+srv://Rogustriker:a0ayciEWyq8Uuqr5@notes.3pft3.mongodb.net/
 mongoose.connect(url,{useNewUrlParser:true},()=>{
     console.log("connected...")
 })
+app.use(express.json())
 app.use(cors())
-app.get('/',(req,res)=>{
+app.post('/Add',(req,res)=>{
     const notes = new Notes({
-        Name:"notes",
-        Notes:"lorem kdajosik kjflakf asdtg",
+        u_id:"test_id",
+        Name:"test notes",
+        Notes:req.body.content,
      })
      notes.save();
     res.status(200).json({sucess:"true"})
     console.log(notes)
+})
+app.post('/DeleteAll',(req,res)=>{
+    Notes.deleteMany({},(error,result)=>{
+        if(error){
+            console.log(error)
+            res.status(400).send("<h2>No Notes</h2>")
+        }
+        else{
+            if(result){
+                res.status(200).send("<h2>All are deleted</h2>")
+            }
+        }
+    })
 })
 app.get('/find',(req,res)=>{
      Notes.find({Name:"notes"},(error,result)=>{

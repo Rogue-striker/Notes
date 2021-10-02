@@ -1,10 +1,11 @@
 import notes from "../images/notes.svg";
+import hamburgerMenu from "../images/hamburger-menu.svg";
 import Button from "@material-ui/core/Button";
 import { Home, Notes } from "@material-ui/icons";
 // import { GoogleLogin } from "react-google-login";
 // import { useState } from "react";
 // import { GoogleLogout } from 'react-google-login';
-import { BrowserRouter as Router, Switch, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Nav = (props) => {
   const gclientid =
@@ -13,7 +14,7 @@ const Nav = (props) => {
     <nav className="navbar">
       <div className="navbar-logo">
         <img src={notes} alt="website title" className="notes-icon" />
-        <a href="#" className="navbar-title">
+        <a href="/" className="navbar-title">
           Notes
         </a>
       </div>
@@ -26,7 +27,7 @@ const Nav = (props) => {
           </Link>
         </li>
         <li className="nav-item">
-          <Link to = "/Notes">
+          <Link to="/Notes">
             <Button variant="contained" startIcon={<Notes />}>
               Notes
             </Button>
@@ -36,10 +37,13 @@ const Nav = (props) => {
           <Button variant="contained">Login</Button>
         </li>
       </ul>
-      <div className="hamburger">
-        <span className="bar">Home</span>
-        <span className="bar">Notes</span>
-        <span className="bar">Login</span>
+      <div className="mobile-menu">
+        <img src={hamburgerMenu} alt="hamburger-menu" className="toogle-icon" />
+        <div className="hamburger">
+          <span clasName="bar">Home</span>
+          <span className="bar">Notes</span>
+          <span className="bar">Login</span>
+        </div>
       </div>
     </nav>
   );

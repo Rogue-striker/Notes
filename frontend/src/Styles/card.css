@@ -1,15 +1,20 @@
 .card{
-    border-radius: 4px;
+    border-radius: 10px;
     background-color: beige;
     width: 100%;
     border-style: solid;
     border-color: red;
     padding: 15px;
+    position: relative
 }
 .card-title{
     text-align: left;
 }
 .card-content{
     text-align: center;
+}
+.btns{
+    display:flex;
+    justify-content: flex-end;
 }
 

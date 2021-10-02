@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.displaynotes{
+    display: flex;
+    flex-direction: column;
+}
+.notes-title{
+    text-align: center;
+    color:white;
+    padding:1.4rem;
+    font-family: 'Poppins', sans-serif!important;
+}
 .note-cards{
     width: 80vw;
-    display:flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     margin:0 auto;
     gap: 10px;
 }

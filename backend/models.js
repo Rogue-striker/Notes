@@ -4,9 +4,10 @@ const mongoose = require('mongoose');
 const Schema =  mongoose.Schema;
 const NotesSchema = new Schema(
      {
+        u_id:String,
         Name:String,
         Notes:String,
      }
  )
- const Notes = mongoose.model("Notes",NotesSchema);
+const Notes = mongoose.model("Notes",NotesSchema);
 module.exports = Notes;

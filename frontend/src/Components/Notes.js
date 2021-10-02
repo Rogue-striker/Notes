@@ -15,7 +15,7 @@ const Notes = () => {
     return (
         <div className="displaynotes">
         <div className="notes-title">
-          <h2>Your Notes</h2>
+          <h2>Welcome Name! Here's your Notes</h2>
         </div>
         <div className="note-cards">
             {
