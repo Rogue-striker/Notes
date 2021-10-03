@@ -3,14 +3,14 @@ import Card from './Card'
 import '../Styles/Notes.css'
 const Note = [
     {
-      title: "Notes title",
-      content: "testing notes to the te fdklg sgdhlgad;dflsaj; ",
+      title: "testing title",
+      content: "testing notes ",
     },
     {
-      title: "Notes title",
-      content: "testing notes to the te fdklg sgdhlgad;dflsaj; ",
+      title: "testing title",
+      content: "testing notes",
     },
-  ];
+  ]; 
 const Notes = () => {
     return (
         <div className="displaynotes">
