@@ -33,15 +33,15 @@ app.post('/DeleteAll',(req,res)=>{
         }
     })
 })
-app.get('/find',(req,res)=>{
-     Notes.find({Name:"notes"},(error,result)=>{
+app.get('/Notes',(req,res)=>{
+     Notes.find({u_id:'test_id'},(error,result)=>{
          if(error){
              res.status(404).send("<h1>Not found</>")
          }
          else{
              if(result){
                 res.status(200).json(result)
-                console.log(result);
+                console.log(result)
              }
              else{
                  res.status(200).send("No Data")

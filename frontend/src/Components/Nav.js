@@ -2,14 +2,14 @@ import notes from "../images/notes.svg";
 import hamburgerMenu from "../images/hamburger-menu.svg";
 import Button from "@material-ui/core/Button";
 import { Home, Notes } from "@material-ui/icons";
-// import { GoogleLogin } from "react-google-login";
-// import { useState } from "react";
-// import { GoogleLogout } from 'react-google-login';
-import { Link } from "react-router-dom";
-
+import { GoogleLogin ,GoogleLogout} from "react-google-login";
+import { useState } from "react";
+import { Link,useHistory } from "react-router-dom";
+var loginStatus = false;
+var response = [{
+  id : "id_1",
+}]
 const Nav = (props) => {
-  const gclientid =
-    "343391264900-0u8r18n9a995nbjlqmqv0l8tgpfb0blb.apps.googleusercontent.com";
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -34,18 +34,17 @@ const Nav = (props) => {
           </Link>
         </li>
         <li className="nav-item">
-          <Button variant="contained">Login</Button>
+         <button>logout</button>
         </li>
       </ul>
-      <div className="mobile-menu">
-        <img src={hamburgerMenu} alt="hamburger-menu" className="toogle-icon" />
-        <div className="hamburger">
-          <span clasName="bar">Home</span>
-          <span className="bar">Notes</span>
-          <span className="bar">Login</span>
-        </div>
+      <div className = "hamburger">
+        <div className= "bar"></div>
+        <div className= "bar"></div>
+        <div className= "bar"></div>
       </div>
     </nav>
   );
 };
 export default Nav;
+export {loginStatus};
+export {response}
