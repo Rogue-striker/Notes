@@ -4,42 +4,51 @@ import api from "../Axios";
 import Button from "@material-ui/core/Button";
 import { Add, Save } from "@material-ui/icons";
 import { text } from "../Components/Card";
+import { response ,loginStatus} from "./Nav";
 import "../Styles/Editor.css";
 const Editor = (props) => {
+  var u_id = response.googleId;
   const history = useHistory();
   const [usernotes, setUserNotes] = useState(text);
-  const [alert, setAlert] = useState(false);
   useEffect(() => {
     if (localStorage.getItem("userNotes"))
       setUserNotes(localStorage.getItem("userNotes"));
   }, []);
+  
   const handleChange = (e) => {
     setUserNotes(e.target.value);
   };
+
   const handleSave = () => {
     if (usernotes !== "") {
       localStorage.setItem("userNotes", usernotes);
     }
   };
+
   const handleClear = () => {
     setUserNotes("");
     localStorage.removeItem("userNotes");
   };
   const handleAdd = () => {
-    if (usernotes !== "") {
+    console.log(u_id ,"added to the u_id")
+    if (usernotes !== "" && u_id) {
       api
-        .post("/Add", { content: usernotes })
+        .post("/Add", { content: usernotes ,
+          u_id : u_id
+        })
         .then((res) => {
           if (res.status === 200) {
-            setAlert(true);
             setUserNotes("");
             history.push("/");
             localStorage.removeItem("userNotes");
           }
         })
         .catch((err) => {
-          console.log("cannot connect to the internet");
+          alert('error please try again')
         });
+    }
+    else if(!loginStatus){
+      alert("login to add to you notes")
     }
   };
   return (
