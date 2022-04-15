@@ -9,10 +9,15 @@ const Notes = () => {
   useEffect(
     () =>{
      if(loginStatus){
-      Axios.get("/Notes")
+
+      Axios.post("/Notes" ,{ u_id :response.googleId })
         .then((res) => {
-            console.log(res.data)
+          if(res.status===200){
             setgetNotes(res.data)
+          }else{
+            alert("error")
+          }
+            
         })
         .catch((err) => {
           console.log(err)
@@ -21,6 +26,20 @@ const Notes = () => {
     },
     []
   );
+  const handleDelete = (id)=>{
+    Axios.post("/Delete",{
+        noteId : id
+    })
+    .then((res)=>{
+        if(res.status === 200){
+            setgetNotes(getNotes.filter((note)=> (note._id !== id)));
+            alert("Note Deleted");
+        }
+    })
+    .catch((err)=>{
+        alert("error")
+    })
+}
   return (
     <div className="displaynotes">
       <div className="notes-title">
@@ -31,8 +50,7 @@ const Notes = () => {
       </div>
       <div className="note-cards">
         {getNotes.map((note) => {
-          console.log(note)
-          return <Card title={note.Name} content={note.Notes} />;
+          return <Card content={note.content} onDelete ={handleDelete}  noteId = {note._id}/>;
         })}
       </div>
     </div>

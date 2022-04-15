@@ -7,10 +7,13 @@ import { text } from "../Components/Card";
 import { response ,loginStatus} from "./Nav";
 import "../Styles/Editor.css";
 const Editor = (props) => {
-  var u_id = response.googleId;
+  const [userId , setUserId] = useState(null);
   const history = useHistory();
   const [usernotes, setUserNotes] = useState(text);
   useEffect(() => {
+    if(loginStatus){
+      setUserId (response.googleId);
+    }
     if (localStorage.getItem("userNotes"))
       setUserNotes(localStorage.getItem("userNotes"));
   }, []);
@@ -30,14 +33,14 @@ const Editor = (props) => {
     localStorage.removeItem("userNotes");
   };
   const handleAdd = () => {
-    console.log(u_id ,"added to the u_id")
-    if (usernotes !== "" && u_id) {
+    if (usernotes !== "" && userId != null) {
       api
-        .post("/Add", { content: usernotes ,
-          u_id : u_id
+        .post("/Add", {
+          content: usernotes ,
+          u_id : userId
         })
         .then((res) => {
-          if (res.status === 200) {
+          if (res.status === 201) {
             setUserNotes("");
             history.push("/");
             localStorage.removeItem("userNotes");

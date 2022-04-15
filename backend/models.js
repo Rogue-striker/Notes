@@ -5,8 +5,7 @@ const Schema =  mongoose.Schema;
 const NotesSchema = new Schema(
      {
         u_id:String,
-        Name:String,
-        Notes:String,
+        content:String,
      }
  )
 const Notes = mongoose.model("Notes",NotesSchema);

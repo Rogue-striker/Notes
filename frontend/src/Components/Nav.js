@@ -22,7 +22,6 @@ const Nav = (props) => {
     setShowLoginBtn(true)
     loginStatus = false;
     response = [];
-    console.log(response)
     his.push('/')
   };
   

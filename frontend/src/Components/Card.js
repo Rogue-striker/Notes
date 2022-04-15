@@ -1,15 +1,9 @@
-import React from 'react'
-import Button from '@material-ui/core/Button'
-import {Delete, Edit} from '@material-ui/icons';
-import { useHistory } from 'react-router';
+import  {React} from 'react'
+import  IconButton  from '@material-ui/core/IconButton'
+import {Delete} from '@material-ui/icons';
 import '../Styles/card.css';
 let text = ""
 const Card = (props) => {
-    const history = useHistory();
-    const handleEdit = ()=>{
-        text = props.content;
-        history.push("/");
-    }
     return (
         <div className = "card">
             <div className = "card-title">
@@ -21,8 +15,12 @@ const Card = (props) => {
                 </p>
             </div>
             <div className = "btns">
-                <Button variant="contained" startIcon = {<Edit/>} onClick = {handleEdit}></Button>
-                <Button variant= "contained" startIcon = {<Delete/>}></Button>
+                <IconButton color = 'error'
+                 onClick = {() =>{
+                    return props.onDelete(props.noteId)
+                }}>
+                    <Delete  color='error'/>
+                </IconButton>
             </div>
         </div>
     )
